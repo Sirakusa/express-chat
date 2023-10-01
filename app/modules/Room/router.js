@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { remove, readRoom } = require('./controller.js');
+const { remove, readRoom } = require('./controller');
 
 const authRouter = Router({ mergeParams: true });
 

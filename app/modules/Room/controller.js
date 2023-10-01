@@ -1,4 +1,4 @@
-const { RoomRepository } = require('./room.js');
+const { RoomRepository } = require('./room');
 
 const room = new RoomRepository();
 
@@ -8,13 +8,19 @@ function remove(req, res) {
   res.send(room.delete(id));
 }
 
-function readRoom(req, res) {
+function read(req, res) {
   const id = parseInt(req.body.id, 10);
 
   res.send(room.read(id));
 }
 
+function openRoom(req, res) {
+  room.create(req.body.user1, req.body.user2);
+  res.sendStatus(200);
+}
+
 module.exports = {
   remove,
-  readRoom,
+  read,
+  openRoom,
 };

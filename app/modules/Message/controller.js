@@ -1,4 +1,4 @@
-const { MessageRepository } = require('./message.js');
+const { MessageRepository } = require('./message');
 
 const message = new MessageRepository();
 
@@ -8,13 +8,20 @@ function remove(req, res) {
   res.send(message.delete(id));
 }
 
-function readMessage(req, res) {
+function read(req, res) {
   const id = parseInt(req.body.id, 10);
 
   res.send(message.read(id));
 }
 
+function sendMessage(req, res) {
+  message.create(req.body.sender, req.body.msg);
+
+  res.sendStatus(200);
+}
+
 module.exports = {
   remove,
-  readMessage,
+  read,
+  sendMessage,
 };
