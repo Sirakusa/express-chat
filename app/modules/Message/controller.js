@@ -1,6 +1,4 @@
-const { MessageRepository } = require('./message');
-
-const message = new MessageRepository();
+const { message } = require('./message');
 
 function remove(req, res) {
   const id = parseInt(req.body.id, 10);

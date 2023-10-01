@@ -38,4 +38,6 @@ class RoomRepository {
   }
 }
 
-module.exports = RoomRepository;
+const room = new RoomRepository();
+
+module.exports = room;

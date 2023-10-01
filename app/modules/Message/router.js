@@ -1,6 +1,10 @@
 const { Router } = require('express');
+const { remove, read, sendMessage } = require('./controller');
 
-const authRouter = Router({ mergeParams: true });
+const routerMessage = Router({ mergeParams: true });
 
-authRouter.post('delete');
-authRouter.get('/read');
+routerMessage.post('/:roomId', sendMessage);
+routerMessage.delete('/', remove);
+routerMessage.get('/', read);
+
+module.exports = routerMessage;

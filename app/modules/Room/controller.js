@@ -1,6 +1,4 @@
-const { RoomRepository } = require('./room');
-
-const room = new RoomRepository();
+const { room } = require('./room');
 
 function remove(req, res) {
   const id = parseInt(req.body.id, 10);

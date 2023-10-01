@@ -19,7 +19,7 @@ class MessageRepository {
       return 'this message dont exists';
     }
 
-    return 'success';
+    return idMessage;
   }
 
   delete(id) {
@@ -34,4 +34,6 @@ class MessageRepository {
   }
 }
 
-module.exports = MessageRepository;
+const message = new MessageRepository();
+
+module.exports = message;
